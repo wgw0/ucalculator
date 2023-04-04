@@ -8,7 +8,8 @@ html {
 body{
     margin-bottom: 100px; /* Height of the footer */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #5fa167;
+    background-color: #eed9c4;
+    color: ivory;
 }
 
 /* STYLE HEADER */
@@ -17,7 +18,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00790e;
+    background-color: #d9b99b;
     color: #fff;
     margin: 0;
     font-size: 30px;
@@ -111,7 +112,7 @@ footer {
 footer a {
   text-decoration: none;
   font-size: 20px;
-  color: ivory;
+  color: white;
 }
 
 footer img {
