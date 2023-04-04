@@ -11,9 +11,9 @@
 <body>
 
 <header>
-    <img src="./img/daisy.png">
+    <img src="./img/daisy.png" alt="Daisy">
     <p>UC Calculator</p>
-    <img src="./img/daisy.png">
+    <img src="./img/daisy.png" alt="Daisy">
 </header>
 
 <main>
@@ -28,14 +28,18 @@
             <td><label for="uc-max-amount">UC Max Amount (£)&nbsp;</label><input class="input" id="uc-max-amount" type="number" value="265" placeholder="Input 265..."></td>    
         </tr>
         <tr>
-            <td><label for="uc-amount-earned">UC Amount Recieved (£)&nbsp;</label><input id="uc-amount-earned" disabled></td>
+            <td><label for="uc-amount-earned">UC Amount Recieved &nbsp;</label><input id="uc-amount-earned" disabled></td>
             <td><label for="total">Total (£)&nbsp;</label><input id="total" disabled></td>
         </tr>
     </tbody>
     </table>
 </main>
 
-<footer></footer>
+<footer>
+    <img src="./img/dachshund.png" alt="Doggy pic">
+    <a href="https://wgw0.github.io/portfolio/">Made by Will</a>
+    <img src="./img/dachshund.png" alt="Doggy pic">
+</footer>
 
 <script>
 async function updateOutput() {
@@ -53,6 +57,11 @@ async function updateOutput() {
   if(ucAmount <= 0){
     ucrecieved.value = "You get no UC";
   }
+    console.log("Hours Worked:", hoursworked.value);
+    console.log("Pay Rate:", payrate.value);
+    console.log("UC Max Amount:", ucmax.value);
+    console.log("UC Amount Earned:", ucrecieved.value);
+    console.log("Total Received:", totalrecieved.value);
 }
 
 // Call the updateOutput function initially
