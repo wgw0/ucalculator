@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UC Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+</head>
+<body>
+
+<header>
+    <p>UC Calculator</p>
+</header>
+
+<main>
+    <table summary="This calculates the given payment and Universal Credit recieved after working a certain amount of hours">
+    <tbody>
+        <tr>
+            <td><label for="hours-worked">Hours worked&nbsp;</label><input class="input" id="hours-worked" type="number" value="0" placeholder="Hours worked per month"></td>
+        </tr>
+        <tr>
+            <td><label for="pay-rate">Pay Rate (£)&nbsp;</label><input class="input" id="pay-rate" type="number" value="8.4" placeholder="Amount earned per hour"></td>
+            <td><label for="amount-earned">Amount Earned (£)&nbsp;</label><input id="amount-earned" disabled></td>
+            <td><label for="uc-max-amount">UC Max Amount (£)&nbsp;</label><input class="input" id="uc-max-amount" type="number" value="265" placeholder="Input 265..."></td>    
+        </tr>
+        <tr>
+            <td><label for="uc-amount-earned">UC Amount Recieved (£)&nbsp;</label><input id="uc-amount-earned" disabled></td>
+            <td><label for="total">Total (£)&nbsp;</label><input id="total" disabled></td>
+        </tr>
+    </tbody>
+    </table>
+</main>
+
+<footer></footer>
+
+<script>
+async function updateOutput() {
+  var hoursworked = document.getElementById("hours-worked");
+  var payrate = document.getElementById("pay-rate");
+  var amountearned = document.getElementById("amount-earned");
+  var ucmax = document.getElementById("uc-max-amount");
+  var ucrecieved = document.getElementById("uc-amount-earned");
+  var totalrecieved = document.getElementById("total");
+
+  amountearned.value = (hoursworked.value * payrate.value).toFixed(2);
+  ucrecieved.value = (ucmax.value - (Number(amountearned.value) * 0.55)).toFixed(2);
+  totalrecieved.value = (Number(ucrecieved.value) + Number(amountearned.value)).toFixed(2);
+  if(ucrecieved.value <= 0){
+    ucrecieved.value = "You get no UC";
+  }
+}
+
+// Call the updateOutput function initially
+updateOutput();
+
+// Add event listeners to the hoursworked and payrate inputs
+var hoursworkedInput = document.getElementById("hours-worked");
+var payrateInput = document.getElementById("pay-rate");
+hoursworkedInput.addEventListener("input", updateOutput);
+payrateInput.addEventListener("input", updateOutput);
+</script>
+
+</body>
+</html>
