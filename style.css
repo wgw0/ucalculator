@@ -1,0 +1,84 @@
+/* SET DEFAULT FONT */
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #5fa167;
+}
+
+/* STYLE HEADER */
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00790e;
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+header img {
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+/* MAIN CONTENT IS CENTRED */
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+/* SETTING TABLE AS GRID */
+
+table {
+    border-collapse: separate;
+    border-spacing: 20px;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+/* STYLE INPUTS */
+
+input,
+output {
+  background-color: #F4F4F4;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  line-height: 30px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input:focus,
+output:focus {
+  background-color: #EAEAEA;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
