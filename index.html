@@ -11,7 +11,9 @@
 <body>
 
 <header>
+    <img src="./img/daisy.png">
     <p>UC Calculator</p>
+    <img src="./img/daisy.png">
 </header>
 
 <main>
@@ -45,9 +47,10 @@ async function updateOutput() {
   var totalrecieved = document.getElementById("total");
 
   amountearned.value = (hoursworked.value * payrate.value).toFixed(2);
-  ucrecieved.value = (ucmax.value - (Number(amountearned.value) * 0.55)).toFixed(2);
-  totalrecieved.value = (Number(ucrecieved.value) + Number(amountearned.value)).toFixed(2);
-  if(ucrecieved.value <= 0){
+  var ucAmount = ucmax.value - (Number(amountearned.value) * 0.55);
+  ucrecieved.value = ucAmount.toFixed(2);
+  totalrecieved.value = (ucAmount + Number(amountearned.value)).toFixed(2);
+  if(ucAmount <= 0){
     ucrecieved.value = "You get no UC";
   }
 }

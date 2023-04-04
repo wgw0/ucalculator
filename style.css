@@ -2,6 +2,7 @@
 
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #5fa167;
 }
 
 /* STYLE HEADER */
@@ -17,6 +18,12 @@ header{
     font-weight: bold;
     text-align: center;
 }
+
+header img {
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
 /* MAIN CONTENT IS CENTRED */
 
