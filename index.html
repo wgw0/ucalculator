@@ -53,15 +53,14 @@ async function updateOutput() {
   amountearned.value = (hoursworked.value * payrate.value).toFixed(2);
   var ucAmount = ucmax.value - (Number(amountearned.value) * 0.55);
   ucrecieved.value = ucAmount.toFixed(2);
-  totalrecieved.value = (ucAmount + Number(amountearned.value)).toFixed(2);
+    if(ucAmount >= 0){
+        totalrecieved.value = (ucAmount + Number(amountearned.value)).toFixed(2);
+    } else {
+        totalrecieved.value = Number(amountearned.value).toFixed(2);
+    }
   if(ucAmount <= 0){
-    ucrecieved.value = "You get no UC";
+    ucrecieved.value = "No UC";
   }
-    console.log("Hours Worked:", hoursworked.value);
-    console.log("Pay Rate:", payrate.value);
-    console.log("UC Max Amount:", ucmax.value);
-    console.log("UC Amount Earned:", ucrecieved.value);
-    console.log("Total Received:", totalrecieved.value);
 }
 
 // Call the updateOutput function initially
